@@ -1,0 +1,211 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+}
+
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  row-gap: 5px;
+}
+
+header {
+  margin: 0px;
+  grid-area: header;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 0.3fr auto;
+}
+
+.logo {
+  font-weight: bolder;
+  font-size: xx-large;
+  padding-left: 35px;
+  padding-right: 15px;
+}
+
+header > nav {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* Updated navigation layout for responsiveness */
+  justify-items: center;
+  margin-left: 55px;
+  background-color: rgb(255, 118, 15);
+  align-items: center;
+  border-left: 3px solid;
+}
+
+.navA {
+  text-decoration: none;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.navA:hover {
+  color: rgb(74, 74, 73);
+}
+
+main {
+  align-self: center;
+  justify-self: center;
+  grid-area: main;
+  display: grid;
+  column-gap: 20px;
+  width: fit-content;
+  margin: 35px;
+  border-radius: 55px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Updated main content layout for responsiveness */
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "profilePic button1"
+    "infoDiv1 button2"
+    "infoDiv1 button3";
+  padding: 50px;
+  background: rgba(150, 148, 148, 0.7);
+  align-content: center;
+  justify-content: center;
+}
+main form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilePic {
+  grid-area: profilePic;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  grid-area: infoDiv1;
+  text-align: center;
+}
+.button1 input {
+  visibility: hidden;
+}
+
+.button2 .changepasswd {
+  text-decoration: none;
+}
+
+.button1,
+.button2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(74, 74, 73);
+  border-radius: 50%;
+}
+
+label,
+button {
+  display: block;
+  width: 200px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  font-size: medium;
+  font-weight: 700;
+  border: 0.2em solid #ddd;
+  background-color: white;
+  padding: 12px;
+  font-weight: 700;
+}
+
+label:hover,
+button:hover {
+  border: 0.2em solid rgb(255, 118, 15);
+  border-radius: 25px;
+  transition: 0.7s;
+}
+
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 3px solid;
+  border-color: rgb(74, 74, 73);
+  color: whitesmoke;
+}
+
+.x,
+.ig,
+.fb {
+  color: whitesmoke;
+  font-weight: 500;
+}
+
+.socialLinks > a:hover {
+  color: rgb(74, 74, 73);
+}
+
+footer .footerBg {
+  display: grid;
+  column-gap: 0px;
+  row-gap: 0px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 10px;
+  font-weight: 500;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 85%;
+  height: fit-content;
+  background-color: rgb(255, 118, 15);
+}
+
+.footerFirst,
+.footerSecond {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.socialLinks {
+  justify-content: center;
+  justify-content: space-between;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  header {
+    height: auto; /* Adjust header height for smaller screens */
+  }
+  footer {
+    height: auto; /* Adjust footer height for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    height: auto; /* Further decrease header height for very small screens */
+  }
+  footer {
+    height: auto; /* Further decrease footer height for very small screens */
+  }
+}

@@ -1,0 +1,207 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+}
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    "header"
+    "form"
+    "footer";
+}
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 0.3fr auto;
+}
+.logo {
+  font-weight: bolder;
+  font-size: xx-large;
+  padding-left: 35px;
+  padding-right: 15px;
+}
+
+header > nav {
+  display: grid;
+  grid-template-columns: 1fr; /* Only one column for navigation */
+  justify-items: center;
+  margin-left: 55px;
+  background-color: rgb(255, 118, 15);
+  align-items: center;
+  border-left: 3px solid;
+}
+.navA {
+  text-decoration: none;
+  font-weight: bold;
+  color: whitesmoke;
+  justify-self: end;
+  margin-right: 25px;
+}
+.navA:hover {
+  color: rgb(74, 74, 73);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(255, 118, 15);
+  padding: 0;
+}
+a:hover {
+  color: aliceblue;
+  transition: 1s;
+}
+.formContainer {
+  grid-area: form;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: auto;
+}
+.formText {
+  align-self: center;
+  grid-column: 2/3;
+  background: rgba(150, 148, 148, 0.7);
+  width: 120%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 55px;
+  padding: 25px 0 25px 0;
+}
+.formText form {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 25px;
+  font-size: large;
+  font-weight: 700;
+}
+input {
+  outline: 0;
+  font-size: inherit;
+  border: 0.2em solid #ddd;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  padding: 0.2em 0.5em;
+  outline: 0;
+  width: fit-content;
+}
+input:hover {
+  border: 0.2em solid rgb(255, 118, 15);
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  transition: 0.7s;
+}
+.submitData,
+.redirectBttn {
+  font-size: inherit;
+  border: 0.2em solid #ddd;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  background-color: white;
+  padding: 0.2em 0.75em;
+  font-weight: 500;
+}
+button {
+  margin-bottom: 10px;
+}
+button:hover {
+  border: 0.2em solid rgb(255, 118, 15);
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  transition: 0.7s;
+}
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 3px solid;
+  border-color: rgba(187, 185, 185, 0.616);
+  color: whitesmoke;
+}
+
+.x,
+.ig,
+.fb {
+  color: whitesmoke;
+  font-weight: 500;
+}
+
+.socialLinks > a:hover {
+  color: rgb(74, 74, 73);
+}
+
+footer .footerBg {
+  display: grid;
+  column-gap: 0px;
+  row-gap: 0px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 10px;
+  font-weight: 500;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 85%;
+  background-color: rgb(255, 118, 15);
+}
+
+.footerFirst {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.footerSecond {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: flex-start;
+}
+
+.socialLinks {
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Adjustments for 768px screens */
+  header {
+    height: auto;
+  }
+  .logo {
+    font-size: 1.3rem; /* Adjusted font size for better responsiveness */
+  }
+
+  .navA {
+    margin-right: 10px;
+  }
+
+  .formContainer {
+    padding: 0 10px;
+  }
+
+  footer {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Adjustments for 480px screens */
+  header {
+    height: auto;
+  }
+  .logo {
+    font-size: 1.1rem; /* Adjusted font size for better responsiveness */
+  }
+
+  .navA {
+    margin-right: 5px;
+  }
+
+  .formContainer {
+    padding: 0 5px;
+  }
+
+  footer {
+    height: auto;
+  }
+}

@@ -1,0 +1,271 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+}
+
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 100px 1fr auto 100px;
+  grid-template-areas:
+    "header"
+    "slide1"
+    "slide2"
+    "footer";
+  row-gap: 5px;
+}
+
+header {
+  margin: 0px;
+  grid-area: header;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 0.3fr auto;
+}
+.logo {
+  font-weight: bolder;
+  font-size: xx-large;
+  padding-left: 35px;
+  padding-right: 15px;
+}
+
+header > nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Only one column for navigation */
+  justify-items: center;
+  margin-left: 55px;
+  background-color: rgb(255, 118, 15);
+  align-items: center;
+  border-left: 3px solid;
+}
+.navA {
+  text-decoration: none;
+  font-weight: bold;
+  color: whitesmoke;
+  padding: 0;
+}
+.navA:hover {
+  color: rgb(74, 74, 73);
+}
+.navA img {
+  background-color: rgb(74, 74, 73);
+  border-radius: 50%;
+}
+.navA img:hover {
+  background-color: rgb(255, 118, 15);
+  transition: 1s;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(255, 115, 0);
+  padding: 0;
+}
+a:hover {
+  color: aliceblue;
+  transition: 1s;
+}
+.slideOne {
+  grid-area: slide1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+
+.slide1Text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: rgba(150, 148, 148, 0.7);
+  width: 75%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+.searchBg {
+  grid-column: 1/4;
+  width: 100%;
+  height: 100%;
+}
+.searchBg > img {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.searchbar {
+  display: inline-flex;
+}
+.searchbarInput {
+  font-size: inherit;
+  border: 0.2em solid #ddd;
+  border-radius: 0.5em 0 0 0.5em;
+  padding: 0.2em 0.5em;
+  border-right: 0;
+  outline: 0;
+  width: fit-content;
+}
+.searchbarButton {
+  font-size: inherit;
+  border: 0.2em solid #ddd;
+  border-radius: 0 0.5em 0.5em 0;
+  background-color: white;
+  border-left: 0;
+  padding: 0 0.75em;
+}
+.slideTwo {
+  grid-area: slide2;
+  display: flex;
+  flex-direction: column;
+}
+.slide2H {
+  text-align: center;
+}
+.recmdBooks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  column-gap: 10px;
+  align-items: center;
+  justify-items: center;
+}
+.bookBg {
+  width: 240px;
+  height: 360px;
+  background: rgba(150, 148, 148, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 10px;
+}
+.bookBg img {
+  width: 100%;
+  height: 100%;
+}
+.bookBg p {
+  align-self: flex-start;
+}
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 3px solid;
+  border-color: rgb(74, 74, 73);
+  color: whitesmoke;
+}
+.x,
+.ig,
+.fb {
+  color: whitesmoke;
+  font-weight: 500;
+}
+.socialLinks > a:hover {
+  color: rgb(74, 74, 73);
+}
+footer .footerBg {
+  display: grid;
+  column-gap: 0px;
+  row-gap: 0px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 10px;
+  font-weight: 500;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 85%;
+  height: fit-content;
+  background-color: rgb(255, 118, 15);
+}
+.footerFirst {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.footerSecond {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: flex-start;
+}
+.socialLinks {
+  justify-content: center;
+  justify-content: space-between;
+}
+/* Adjustments for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-rows: auto 1fr auto auto; /* Adjust container rows */
+  }
+
+  header {
+    height: auto; /* Adjust header grid to a single column */
+  }
+
+  .logo {
+    font-size: 1.2rem; /* Decrease font size for logo */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .slideOne {
+    height: 200px; /* Adjust height of slide1 */
+  }
+
+  .searchBg,
+  .searchBg > img {
+    height: 200px; /* Adjust height of search background and image */
+  }
+
+  .slideTwo {
+    padding: 0 10px; /* Add padding to slide2 */
+  }
+
+  .bookBg {
+    width: fit-content; /* Adjust width of book background */
+    /* Adjust margin of book background */
+  }
+
+  footer {
+    height: auto;
+  }
+}
+
+/* Adjustments for screens smaller than 480px */
+@media screen and (max-width: 480px) {
+  header {
+    height: auto;
+  }
+  .logo {
+    font-size: 1rem; /* Further decrease font size for logo */
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .slideOne,
+  .searchBg,
+  .searchBg > img {
+    height: 150px; /* Further reduce height of slide1 and search background */
+  }
+
+  .slide2H {
+    font-size: 1.2rem;
+    height: 150px;
+  }
+
+  .bookBg {
+    width: fit-content; /* Adjust width of book background for smaller screens */
+  }
+  footer {
+    height: auto;
+  }
+}
